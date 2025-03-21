@@ -3,7 +3,7 @@
 public abstract class Container
 {
     
-    public int ProductMass { get; set; }
+    public virtual int ProductMass { get; set; }
     public int Height { get; set; }
     public int EmptyMass { get; set; }
     public int Depth { get; set; }
@@ -23,7 +23,7 @@ public abstract class Container
         return this.EmptyMass;
     }
 
-    public void AddMass(int mass)
+    public virtual void AddMass(int mass)
     {
         if (this.ProductMass + mass > this.MaxLoad)
         {
