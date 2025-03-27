@@ -15,7 +15,7 @@ public class GassContainer : Container, IHazard
 
     public override ContainerId CreateContainerID()
     {
-        return new ContainerId(this.NextSerialNumber(), "G");
+        return new ContainerId(this.NextSerialNumber(), this.ContainerCategory);
     }
 
     public void Danger()
@@ -29,9 +29,12 @@ public class GassContainer : Container, IHazard
         return ProductMass;
     }
 
-    public GassContainer(int emptyMass, int height, int depth, bool hazard) : base(emptyMass, height, depth)
+    public GassContainer(int emptyMass, int maxLoad,int height, int depth, bool hazard) : base(emptyMass,maxLoad, height, depth)
     {
+        this.ContainerCategory = "G";
         ISHazard = hazard;
+        ContainerId = CreateContainerID();
+        
     }
     
     

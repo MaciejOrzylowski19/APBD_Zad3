@@ -2,13 +2,16 @@
 
 public class ContainerShip
 {
-    
+
+    private static int shipId = 0;
     public int MaxLoad { get;  }
     public double MaxSpeed { get; }
     public int MaxCapacity { get; }
-    public int Mass { get; private set; }
     
-    public HashSet<Container> Containers { get; }
+    public int ShipId { get; }
+    public int Mass { get; private set; }
+
+    public HashSet<Container> Containers { get; } = new HashSet<Container>();
 
     public ContainerShip(int maxLoad, double maxSpeed, int maxCapacity)
     {
@@ -16,6 +19,7 @@ public class ContainerShip
         MaxSpeed = maxSpeed;
         MaxCapacity = maxCapacity;
         Mass = 0;
+        ShipId = ++shipId;
     }
 
     public Container? GetContainerById(string id)
@@ -38,13 +42,13 @@ public class ContainerShip
             throw new IndexOutOfRangeException("No such container");
         }
 
-        Mass -= container.ProductMass;
+        Mass -= container.ProductMass - container.EmptyMass;
         Containers.Remove(container);
     }
     
     public void AddContainer(Container container)
     {
-        if (container.ProductMass + Mass > MaxLoad || Containers.Count == MaxCapacity)
+        if (container.ProductMass + Mass + container.EmptyMass > MaxLoad || Containers.Count == MaxCapacity)
         {
             throw new OverfillException();
         }
@@ -56,7 +60,7 @@ public class ContainerShip
         int conMass = 0;
         foreach (Container container in containers)
         {
-            conMass += container.ProductMass;
+            conMass += (container.ProductMass + container.EmptyMass);
         }
         
         if (conMass + Mass > MaxLoad || containers.Count + Containers.Count > MaxCapacity)
@@ -83,7 +87,7 @@ public class ContainerShip
         {
             throw new IndexOutOfRangeException("No such container found");
         }
-        if (container.ProductMass + Mass - toChangeContainer.ProductMass > MaxLoad)
+        if (container.ProductMass + Mass  + container.EmptyMass - toChangeContainer.ProductMass - toChangeContainer.EmptyMass> MaxLoad)
         {
             Containers.Remove(toChangeContainer);
             Containers.Add(container);
@@ -98,7 +102,7 @@ public class ContainerShip
             throw new IndexOutOfRangeException("No such container found");
         }
 
-        if (ship.Containers.Count == ship.MaxCapacity || ship.Mass + toChangeContainer.ProductMass > ship.MaxLoad)
+        if (ship.Containers.Count == ship.MaxCapacity || ship.Mass + toChangeContainer.ProductMass + toChangeContainer.EmptyMass > ship.MaxLoad)
         {
             throw new OverfillException();
         }
@@ -155,4 +159,19 @@ public class ContainerShip
         
     }
 
+    public override string ToString()
+    {
+        return "ID: " + ShipId + "  Mass: " + Mass + "  Capacity: " + MaxCapacity + "  Max speed: " + MaxSpeed;
+    }
+
+    public void CargoInfo()
+    {
+
+        foreach (Container container in Containers)
+        {
+            Console.WriteLine(container);
+            Console.WriteLine("\n");
+        }
+        
+    }
 }

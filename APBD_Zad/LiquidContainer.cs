@@ -17,16 +17,14 @@ public class LiquidContainer : Container, IHazard
 
     public override ContainerId CreateContainerID()
     {
-        return new ContainerId(this.ContainerIdNum, this.ContainerCategory);
+        return new ContainerId(NextSerialNumber(), ContainerCategory);
     }
 
-    public LiquidContainer(int emptyMass, int height, int depth, bool hazard) : base(emptyMass, height, depth)
+    public LiquidContainer(int emptyMass,int maxLoad, int height, int depth, bool hazard) : base(emptyMass,maxLoad, height, depth)
     {
         this.IsHazard = hazard;
-        this.ContainerIdNum = NextSerialNumber();
-        this.ContainerCategory = "C";
-        CreateContainerID();
-
+        this.ContainerCategory = "L";
+        this.ContainerId = CreateContainerID();
     }
 
 
@@ -51,7 +49,6 @@ public class LiquidContainer : Container, IHazard
 
     public void Danger()
     {
-        
         Console.WriteLine("Danger in LiquidContainer number: " + this.ContainerId.GetContainerId());
     }
     

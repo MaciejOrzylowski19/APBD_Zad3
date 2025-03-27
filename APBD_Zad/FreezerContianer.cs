@@ -5,7 +5,7 @@ public class FreezerContainer : Container
 
     private static int _seriaNumber = 0;
     
-    public Dictionary<Product, int> Products { get; set; }
+    public Dictionary<Product, int> Products { get; set; } = new Dictionary<Product, int>();
     public SortedSet<Product> PossibleProducts { get; set;}
 
     public double Temperature
@@ -16,6 +16,11 @@ public class FreezerContainer : Container
         }
         set
         {
+            if (Products.Count == 0)
+            {
+                return;
+            }
+
             double minimalTemp = 10000;
             foreach (Product product in Products.Keys)
             {
@@ -29,7 +34,8 @@ public class FreezerContainer : Container
             {
                 throw new TooHighTemperatureException();
             }
-            ;
+
+            return;
         }
     }
 
@@ -44,15 +50,21 @@ public class FreezerContainer : Container
     }
 
 
-    public FreezerContainer(int emptyMass, int height, int depth, SortedSet<Product> possibleProducts, double temperature)
-        : base(emptyMass, height, depth)
+    public FreezerContainer(int emptyMass, int maxLoad,int height, int depth, SortedSet<Product> possibleProducts, double temperature)
+        : base(emptyMass, maxLoad,height, depth)
     {
         this.PossibleProducts = possibleProducts;
+        Temperature = temperature;
+        this.ContainerCategory = "F";
+        ContainerId = CreateContainerID();
     }
 
-    public FreezerContainer(int emptyMass, int height, int depth, double temperature) : base(emptyMass, height, depth)
+    public FreezerContainer(int emptyMass, int maxLoad,  int height, int depth, double temperature) : base(emptyMass, maxLoad,height, depth)
     {
         this.PossibleProducts = new SortedSet<Product>();
+        Temperature = temperature;
+        this.ContainerCategory = "F";
+        ContainerId = CreateContainerID();
     }
     
     

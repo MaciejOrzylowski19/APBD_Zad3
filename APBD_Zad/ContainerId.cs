@@ -10,14 +10,19 @@ public class ContainerId
     public ContainerId(int containerNumber, string containerTail)
     {
         ContainerHead = "KON";
-        containerNumber = containerNumber;
-        containerTail = containerTail;
+        ContainerNumber = containerNumber;
+        ContainerTail = containerTail;
 
     }
 
     public string GetContainerId()
     {
         return ContainerHead + "-" + ContainerNumber.ToString() + "-" + ContainerTail;
+    }
+
+    public override string ToString()
+    {
+        return GetContainerId();
     }
 
 }
