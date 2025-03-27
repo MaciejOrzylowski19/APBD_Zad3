@@ -49,6 +49,12 @@ public class FreezerContainer : Container
     {
         this.PossibleProducts = possibleProducts;
     }
+
+    public FreezerContainer(int emptyMass, int height, int depth, double temperature) : base(emptyMass, height, depth)
+    {
+        this.PossibleProducts = new SortedSet<Product>();
+    }
+    
     
     public void LoadProduct(string productName, int mass)
     {
@@ -138,4 +144,15 @@ public class FreezerContainer : Container
         Products.Remove(product);
         this.ProductMass -= mass;
     }
+    public override string ToString()
+    {
+        String target = base.ToString();
+        target += "Products: \n";
+        foreach (Product product in Products.Keys)
+        {
+            target += product.ToString() + ":  mass - " + Products[product].ToString() + "  temp -  " + product.MinimalTemperature;
+        }
+        return target;
+    }
+    
 }

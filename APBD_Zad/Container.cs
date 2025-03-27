@@ -40,6 +40,15 @@ public abstract class Container
         this.Height = height;
         this.Depth = depth;
     }
-    
+
+    public override string ToString()
+    {
+        String target = "Container id: " + ContainerId + '\n' +
+                        "mass: " + ProductMass + "\n" +
+                        "max load: " + MaxLoad + "\n" +
+                        "depth: " + Depth + "\n" +
+                        "height: " + Height + "\n";
+        return target;
+    }
     
 }
