@@ -17,10 +17,10 @@ public abstract class Container
     
     public abstract ContainerId CreateContainerID();
     
-    public int EmptyLoad()
+    public virtual int EmptyLoad()
     {
         this.ProductMass = 0;
-        return this.EmptyMass;
+        return ProductMass;
     }
 
     public virtual void AddMass(int mass)

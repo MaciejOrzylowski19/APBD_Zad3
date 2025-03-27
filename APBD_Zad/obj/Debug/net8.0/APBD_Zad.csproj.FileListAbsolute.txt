@@ -1,0 +1,15 @@
+C:\Users\Lenovo\RiderProjects\APBD_Zad3\APBD_Zad\bin\Debug\net8.0\APBD_Zad.exe
+C:\Users\Lenovo\RiderProjects\APBD_Zad3\APBD_Zad\bin\Debug\net8.0\APBD_Zad.deps.json
+C:\Users\Lenovo\RiderProjects\APBD_Zad3\APBD_Zad\bin\Debug\net8.0\APBD_Zad.runtimeconfig.json
+C:\Users\Lenovo\RiderProjects\APBD_Zad3\APBD_Zad\bin\Debug\net8.0\APBD_Zad.dll
+C:\Users\Lenovo\RiderProjects\APBD_Zad3\APBD_Zad\bin\Debug\net8.0\APBD_Zad.pdb
+C:\Users\Lenovo\RiderProjects\APBD_Zad3\APBD_Zad\obj\Debug\net8.0\APBD_Zad.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\RiderProjects\APBD_Zad3\APBD_Zad\obj\Debug\net8.0\APBD_Zad.AssemblyInfoInputs.cache
+C:\Users\Lenovo\RiderProjects\APBD_Zad3\APBD_Zad\obj\Debug\net8.0\APBD_Zad.AssemblyInfo.cs
+C:\Users\Lenovo\RiderProjects\APBD_Zad3\APBD_Zad\obj\Debug\net8.0\APBD_Zad.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\RiderProjects\APBD_Zad3\APBD_Zad\obj\Debug\net8.0\APBD_Zad.sourcelink.json
+C:\Users\Lenovo\RiderProjects\APBD_Zad3\APBD_Zad\obj\Debug\net8.0\APBD_Zad.dll
+C:\Users\Lenovo\RiderProjects\APBD_Zad3\APBD_Zad\obj\Debug\net8.0\refint\APBD_Zad.dll
+C:\Users\Lenovo\RiderProjects\APBD_Zad3\APBD_Zad\obj\Debug\net8.0\APBD_Zad.pdb
+C:\Users\Lenovo\RiderProjects\APBD_Zad3\APBD_Zad\obj\Debug\net8.0\APBD_Zad.genruntimeconfig.cache
+C:\Users\Lenovo\RiderProjects\APBD_Zad3\APBD_Zad\obj\Debug\net8.0\ref\APBD_Zad.dll

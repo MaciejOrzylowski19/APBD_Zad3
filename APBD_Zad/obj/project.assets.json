@@ -8,26 +8,24 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\s31569\\.nuget\\packages\\": {}
+    "C:\\Users\\Lenovo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\s31569\\RiderProjects\\APBD_Zad\\APBD_Zad\\APBD_Zad.csproj",
+      "projectUniqueName": "C:\\Users\\Lenovo\\RiderProjects\\APBD_Zad3\\APBD_Zad\\APBD_Zad.csproj",
       "projectName": "APBD_Zad",
-      "projectPath": "C:\\Users\\s31569\\RiderProjects\\APBD_Zad\\APBD_Zad\\APBD_Zad.csproj",
-      "packagesPath": "C:\\Users\\s31569\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\s31569\\RiderProjects\\APBD_Zad\\APBD_Zad\\obj\\",
+      "projectPath": "C:\\Users\\Lenovo\\RiderProjects\\APBD_Zad3\\APBD_Zad\\APBD_Zad.csproj",
+      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lenovo\\RiderProjects\\APBD_Zad3\\APBD_Zad\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\s31569\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -66,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Lenovo\\.dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
