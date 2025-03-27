@@ -8,16 +8,19 @@ public class FreezerContainer : Container
     public Dictionary<Product, int> Products { get; set; } = new Dictionary<Product, int>();
     public SortedSet<Product> PossibleProducts { get; set;}
 
+    private double Temp { get; set; }
     public double Temperature
     {
         get
         {
-            return Temperature;
+            return Temp;
         }
+        
         set
         {
             if (Products.Count == 0)
-            {
+            {   
+                Temp = value;
                 return;
             }
 
@@ -34,7 +37,7 @@ public class FreezerContainer : Container
             {
                 throw new TooHighTemperatureException();
             }
-
+            Temp = value;
             return;
         }
     }
@@ -70,12 +73,13 @@ public class FreezerContainer : Container
     
     public void LoadProduct(string productName, int mass)
     {
-        if (mass + this.ProductMass > this.Temperature)
+        if (mass + this.ProductMass > this.MaxLoad)
         {
             throw new OverfillException();
         }
         Product? product = findProduct(productName);
-        if (product == null)
+        
+        if (product != null)
         {
             double productTemperature = 0;
             foreach (Product p in PossibleProducts)
@@ -91,14 +95,14 @@ public class FreezerContainer : Container
                 }
             }
         }
-        this.Products[product] += mass;
     }
 
     private Product? findProduct(string productName)
     {
-        foreach (Product product in Products.Keys)
+        
+        foreach (Product product in PossibleProducts)
         {
-            if (product.Name == productName)
+            if (product.Name.Equals(productName))
             {
                 return product;
             }    
@@ -142,7 +146,18 @@ public class FreezerContainer : Container
         {
             throw new NullReferenceException("such product doesn't exist");
         }
-        Products[product] += mass;
+        
+        //Console.WriteLine(Products.Count);        
+        
+        foreach (Product p in Products.Keys)
+        {
+            if (p.Equals(product))
+            {
+                Products[p] += mass;
+                return;
+            }
+        }
+        
     }
 
     public void EmptyLoad(int mass, string productName)
